@@ -33,6 +33,18 @@ app.get("/authors/:id/books", (request, response) => {
   }
 });
 
+app.get("json/authors/:id", (request, response) => {
+  console.log(request.params.id);
+  if (request.params.id <= authors.length) {
+    response.json(
+      authors[request.params.id - 1].author,
+      authors[request.params.id - 1].nationality
+    );
+  } else {
+    response.send("author not found");
+  }
+});
+
 app.get("*", (request, response) => {
-  response.send("route non existente");
+  response.send(`<h1>Error</h1>`);
 });
