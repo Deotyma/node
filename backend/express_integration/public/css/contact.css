@@ -1,0 +1,21 @@
+header {
+    background-image: url(./../img/header.jpg);
+    background-color: black;
+}
+
+.mapBig {
+    display: none;
+}
+
+.mapLittle {
+    display: grid;
+}
+
+@media (min-width: 992px) {
+    .mapLittle {
+        display: none;
+    }
+    .mapBig {
+        display: grid;
+    }
+}

@@ -1,0 +1,39 @@
+header {
+    background-image: url(./../img/articles/suzette/suzette-header.jpg);
+}
+
+.presentation {
+    height: 20vh;
+}
+
+.letter::first-letter {
+    font-size: 400%;
+    color: grey;
+    line-height: 20px;
+    float: left;
+    margin: 8px 8px 8px -8px;
+}
+
+.comentary,
+.comentaryGrey {
+    width: 64px;
+    height: 64px;
+    justify-content: center;
+}
+
+.comentaryGrey {
+    opacity: 50%;
+}
+
+h4 a {
+    color: black;
+}
+
+h4 a:hover {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border-radius: 5px;
+}

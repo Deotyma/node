@@ -1,0 +1,10 @@
+header {
+    background-image: url(./../img/team/team.jpg);
+}
+
+.photo {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin-right: 8px;
+}
