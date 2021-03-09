@@ -119,6 +119,51 @@ const cities = [
   { _id: 99, department: 56, city: "Lorient", population: 57084 },
 ];
 
-cityModel
+/* cityModel
   .deleteMany({})
   .then(() => cityModel.insertMany(cities, function (error, docs) {}));
+ */
+
+//1. Affichez la population totale par département
+/* cityModel
+  .aggregate()
+  .group({
+    _id: { department: "$department" },
+    population: { $sum: "$population" },
+  })
+  .sort({ population: -1 })
+  .then((response) => console.log(response));
+ */
+
+//2. Affichez la population moyenne par département
+/* cityModel
+  .aggregate()
+  .group({
+    _id: { department: "$department" },
+    moyenne: { $avg: "$population" },
+  })
+  .sort({ population: -1 })
+  .then((response) => console.log(response)); */
+
+//4. Comptez le nombre de ville par département
+/* cityModel
+  .aggregate()
+  .group({
+    _id: { department: "$department" },
+    city: { $sum: 1 },
+  })
+  .sort({ departement: 1 })
+  .then((response) => console.log(response)); */
+
+//5. Recuperer les mêmes infos mais uniquement pour les viles commencant par un P
+cityModel
+  .aggregate()
+  .match({
+    city: /^P/,
+  })
+  .group({
+    _id: { city: "$city" },
+    population: { $sum: "$population" },
+  })
+  .sort({ population: -1 })
+  .then((response) => console.log(response));
