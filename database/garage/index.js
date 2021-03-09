@@ -76,4 +76,7 @@ const characterModel = mongoose.model("cars", charactersSchema);
   { brand: "Range Rover", model: "Discovery Sport", year: 2017 },
 ];
 characterModel.insertMany(cars, function (error, docs) {});
+
+
+characterModel.find;
  */
