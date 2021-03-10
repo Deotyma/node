@@ -152,7 +152,7 @@ const cities = [
     _id: { department: "$department" },
     city: { $sum: 1 },
   })
-  .sort({ departement: 1 })
+  .sort({ department: 1 })
   .then((response) => console.log(response)); */
 
 //5. Recuperer les mêmes infos mais uniquement pour les viles commencant par un P
