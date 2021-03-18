@@ -5,7 +5,10 @@ const userSchema = new mongoose.Schema({
   password: String,
   firstName: String,
   surname: String,
-  dateOfBirth: Date,
+  dateOfBirth: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const userModel = mongoose.model("users", userSchema);
